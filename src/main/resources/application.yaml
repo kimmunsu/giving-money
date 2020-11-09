@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: default
+
+logging:
+  level:
+    com.moonsu.givingMoney: debug
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
